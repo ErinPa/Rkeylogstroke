@@ -1,0 +1,83 @@
+\documentclass[article]{jss}
+\usepackage[utf8]{inputenc}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\author{
+Nicolas Ballier\\Paris Diderot \And Erin Pacquetet\\Paris Diderot
+}
+\title{A Capitalized Title: Something about a Package \pkg{Rkeylog}}
+
+\Plainauthor{Nicolas Ballier, Erin Pacquetet}
+\Plaintitle{A Capitalized Title: Something about a Package foo}
+\Shorttitle{\pkg{Rkeylog}: A Preliminary Exploration}
+
+\Abstract{
+The abstract of the article.
+}
+
+\Keywords{keywords, not capitalized, \proglang{Java}}
+\Plainkeywords{keylogs, bursts, clusters}
+
+%% publication information
+%% \Volume{50}
+%% \Issue{9}
+%% \Month{June}
+%% \Year{2012}
+%% \Submitdate{}
+%% \Acceptdate{2012-06-04}
+
+\Address{
+    Nicolas Ballier\\
+  Paris Diderot\\
+  Université Paris Diderot Paris 7 UFR études anglophones Bât Olympe de
+  Gouges Case 7046 5 rue Thomas Mann 75205 Paris Cedex 13First line\\
+  E-mail: \email{nicolas.ballier@univ-paris-diderot.fr}\\
+  URL: \url{http://www.clillac-arp.univ-paris-diderot.fr/user/nicolas_ballier}\\~\\
+    }
+
+% Pandoc header
+
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Introduction}\label{introduction}
+
+This prorotype describes the information required for the package.
+
+\subsection{Code formatting}\label{code-formatting}
+
+Don't use markdown, instead use the more precise latex commands:
+
+\begin{itemize}
+\tightlist
+\item
+  \proglang{Java}
+\item
+  \pkg{plyr}
+\item
+  \code{print("abc")}
+\end{itemize}
+
+\section{R code}\label{r-code}
+
+Can be inserted in regular R markdown blocks.
+
+\begin{CodeChunk}
+
+\begin{CodeInput}
+R> x <- 1:10
+R> x
+\end{CodeInput}
+
+\begin{CodeOutput}
+ [1]  1  2  3  4  5  6  7  8  9 10
+\end{CodeOutput}
+\end{CodeChunk}
+
+
+
+\end{document}
+

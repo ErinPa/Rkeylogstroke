@@ -1,0 +1,55 @@
+---
+author:
+  - name: Nicolas Ballier 
+    affiliation: Paris Diderot
+    address: >
+    
+      Université Paris Diderot Paris 7
+      UFR études anglophones
+      Bât Olympe de Gouges
+      Case 7046
+      5 rue Thomas Mann
+      75205 Paris Cedex 13First line
+      
+    email: \email{nicolas.ballier@univ-paris-diderot.fr}
+    url: http://www.clillac-arp.univ-paris-diderot.fr/user/nicolas_ballier
+  - name: Erin Pacquetet
+    affiliation: Paris Diderot
+title:
+  formatted: "A Capitalized Title: Something about a Package \\pkg{Rkeylog}"
+  # If you use tex in the formatted title, also supply version without
+  plain:     "A Capitalized Title: Something about a Package foo"
+  # For running headers, if needed
+  short:     "\\pkg{Rkeylog}: A Preliminary Exploration"
+abstract: >
+  The abstract of the article.
+keywords:
+  # at least one keyword must be supplied
+  formatted: [keywords, not capitalized, "\\proglang{Java}"]
+  plain:     [keylogs, bursts, clusters]
+preamble: >
+  \usepackage{amsmath}
+output: rticles::jss_article
+---
+
+# Introduction
+
+This prorotype describes the information required for the package.
+
+## Code formatting
+
+Don't use markdown, instead use the more precise latex commands:
+
+* \proglang{Java}
+* \pkg{plyr}
+* \code{print("abc")}
+
+# R code
+
+Can be inserted in regular R markdown blocks.
+
+```{r}
+x <- 1:10
+x
+```
+
