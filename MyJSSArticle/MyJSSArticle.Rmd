@@ -18,7 +18,7 @@ author:
 title:
   formatted: "A Capitalized Title: Something about a Package \\pkg{Rkeylog}"
   # If you use tex in the formatted title, also supply version without
-  plain:     "A Capitalized Title: Something about a Package foo"
+  plain:     "A Capitalized Title: Something about a Package {Rkeylog}"
   # For running headers, if needed
   short:     "\\pkg{Rkeylog}: A Preliminary Exploration"
 abstract: >
