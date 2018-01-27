@@ -1,0 +1,11 @@
+Package: Rkeylog
+Type: Draft R Package
+Title: Visualising ans Analysing typed data from keylogs
+Version: 0.1.0
+Author: Taylor Arnold, Nicolas Ballier & Erin Pacquetet
+Maintainer: Probably Taylor Arnold <yourself@somewhere.net>
+Description: This darft R package is a prototype to investige keylog data (from time stamps to texts and sentences)
+    Depending on the extensions and depenedncies of the packages, syllable counts and parsing of the types data may be offered.
+License: GNU??. See Clean NLP for details?
+Encoding: UTF-8
+LazyData: true
