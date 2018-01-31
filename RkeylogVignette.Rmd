@@ -1,6 +1,6 @@
 ---
-title: "Rkeylog Vignette"
-author: "Nicolas Ballier"
+title: "Desiderata for a keylog R package"
+author: "Taylor Arnold, Nicolas Ballier & Erin Pacquetet"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 #         css: mystyles.css
@@ -9,29 +9,44 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-This vignette describes the elementary functions required for keystroke analysis. Keyloggr : an R  package that includes functions to pre-process the linguistic analysis of keylogs.
 
 
-# Introduction
+This vignette describes the elementary functions required for keystroke analysis. Keyloggr : an R  package that includes functions to pre-process the linguistic analysis of keylogs (to be developed with cleanNLP calls) and visualise keylog data as plain texts.
+
+
+## Introduction
 Keylogs have mostly been used for typist authentication (Giot et al). This package explores some of the functionalities required for linguistic analysis. Three levels of complexity have been distinguished in this approach.
 - The first series of analyses is limited to a static conception of keystrokes, which aims at reconstituting the intended texts. It enables the R user  to estimate chunks of typed speech and basically works at word level.(Future elaborate version will compute word duration in relation to the frequency of words in the two reference corpoora SUBTLEX and SUBTUS, using the Zipf scale ). The system implements the cleanNLP parsing, which allows the analysis of clustesr of words and of part of speech. 
 - The second series of analyses works at the character level. 
 - the third series of functions focuses on backspace and a dynamic representation of the typing process.  Language models at ngram levels are introduced at this stage, allowing the comparison a pressed key with the alternative keys, using conditional probailites.
 
 ## Importing functions
+## Input formats
+The keylog package has been tested with a moodle-generated plugin and a standard datset. Inputlog data format is to be tested in March.
 
 ###Readkeylog : a function that imports keylogs/script outputs from the different keylog capture programs.
 (with fuctionality that saves the output 
 TODO ERIN : multi-platform comparison of existing output : create the function that imports datasets / script outputs,
 
-##DATASETS: 
-Not for public domain : fastest, smallest extractions of existing datasets. Our own productions as testbeds
-(and multilingual examples) 
+##DATASETS?:
+Not for public domain : fastest, smallest extractions of existing datasets. Our own productions as testbeds (and multilingual examples). 
 
 
 ## DESCRIPTIVE ANALYSIS :
-print the fastest and slowest sentences, display a boxplot of the duration of sentences
+print the fastest and slowest sentences, display a boxplot of the duration of sentences 
 print timegraphs for a given setence 
+
+
+## Figures
+The package includes function that displays burts . 
+
+```{r, fig.show='hold'}
+# To be properly coded
+plot(1:10)
+plot(10:1)
+```
+
+`fig.cap = "a sample of bursts."` produced by the function **burst()**.
 
 ##Chunkingdisplay
 The function that displays text separators corresponding to given thresholds
@@ -48,10 +63,11 @@ An R package for the linguistic analysis of
 
 
 ## time graphs
-provide time graphs and corresponding chunkc for a given text / sentence
+provide time graphs and corresponding chunks for a given text / sentence
 
 
 # Clusters : the function that 
+
 
 #RECTANGULAR DATA
 Intended text () : the R function that returns the text meant t be types , where backspaces have   been cleaned.
@@ -59,20 +75,20 @@ Intended text () : the R function that returns the text meant t be types , where
 # RECTANGUAR DATA
 This displays the expected rectangular format proposed as output for each dataset
 ```{r, echo=FALSE, results='asis'}
+#TODO: insert propose code here
 knitr::kable(head(mtcars, 10))
 ```
 
 Note generate minimaltext data
 
-
 ###Syllable count ()
 A script that converts texts into syllable counts
-ERIN : TODO  document the precision of the algorithm based on your Phonology module paper.
-
+# ERIN : TODO  document the precision of the algorithm based on your Phonology module paper.
 
 
 ###Search()
 This function is meant to enable searches on regular expressions. To retrieve a similar pattern to compare time stamps and durations for comparable seuences
+
 
 #### display characterkey fonts in the plot?
 
@@ -82,13 +98,16 @@ This function is meant to enable searches on regular expressions. To retrieve a 
 # thresholding (tid, threshold= , punct = "TRUE"")
 For a given tid (text typed by a typist), represent chunks of speech corresponding to the pause threshold given as input (in ms). The logic parameter 'punct' corresponds to
 
+
 # n-gram for keys and language models
 
-#VERSION 2.0 : analysing backspaces (dynamic)
+## A ROADMAP FOR VERSION 2.0 : analysing backspaces (dynamic analysis)
+
 
 ## Mining processes : erasure
 erasure() : prints, for each tid, a dataframe with the list of keys that have been erased, the corresponding duration of the erasure process (sums backspace suration) and the  three words before and three words after the erasure.
 erasure (tid)
+
 
 # LANGUAGE MODELS
 perplexity
@@ -98,43 +117,27 @@ Display log probability scores of each word, in addition to sentence and corpus 
 utterance-scores
 Write just the log probability score of each utterance, one per line. This can be used for rescoring n-best lists.
 
+
 # ngramr – an R package for Google Ngrams
 https://www.r-bloggers.com/ngramr-an-r-package-for-google-ngrams/
+
 
 # Copyright issues
 You can use the package , which is distributed under standard GPL terms. 
 ^[Please refer to the following paper if you use this package : Anonymous.]
 
 # REFERENCE SECTION
-(paste from Erin's thesis)
+# TODO (cut and paste from Erin's thesis)
 
 
-### NB A reminder of the rarkdown syntax
-math expressions, e.g. $Y = X\beta + \epsilon$
 
-> "Here is an intersting quote for the paper."
-([via](https://link-to-the-paper))
-
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
+## TODO
+- proper reference to tidy data
+- interface to cleanNLP
+- fix the optionin the YAML coding
+ fig_caption: yes
 
 
-# Figures
-The figure sizes have been customised so that you can easily put two images side-by-side. 
 
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
-```
-
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
 
 
